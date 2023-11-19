@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControlCitas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,10 +29,20 @@ namespace Contactos_De_Emergencia
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            ControladorNavegacion.MostrarFormulario(new ListaConsultas());
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ControladorNavegacion.MostrarFormulario(new Expediente());
+        }
+
+        private void ListaDePacientes_Load(object sender, EventArgs e)
         {
 
         }

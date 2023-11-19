@@ -21,5 +21,20 @@ namespace ControlCitas
         {
             ControladorNavegacion.MostrarFormulario(new Antecedentes());
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AgregarAntecedentes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            ControladorNavegacion.MostrarFormulario(new Expediente());
+        }
     }
 }

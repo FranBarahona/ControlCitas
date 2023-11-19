@@ -29,10 +29,6 @@ namespace ControlCitas
         /// </summary>
         private void InitializeComponent()
         {
-            this.nuevaConsulta = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -47,53 +43,15 @@ namespace ControlCitas
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.regresar = new System.Windows.Forms.Button();
-            this.editar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnContactoEmergencia = new System.Windows.Forms.Button();
+            this.btnAntecedentes = new System.Windows.Forms.Button();
+            this.btnHistorialConsultas = new System.Windows.Forms.Button();
+            this.btnNuevaConsulta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // nuevaConsulta
-            // 
-            this.nuevaConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F);
-            this.nuevaConsulta.Location = new System.Drawing.Point(22, 322);
-            this.nuevaConsulta.Name = "nuevaConsulta";
-            this.nuevaConsulta.Size = new System.Drawing.Size(165, 53);
-            this.nuevaConsulta.TabIndex = 0;
-            this.nuevaConsulta.Text = "Nueva consulta";
-            this.nuevaConsulta.UseVisualStyleBackColor = true;
-            this.nuevaConsulta.Click += new System.EventHandler(this.NuevaConsulta_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F);
-            this.button2.Location = new System.Drawing.Point(220, 322);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 53);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Historial de consultas";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.historial_Click);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F);
-            this.button3.Location = new System.Drawing.Point(423, 322);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 53);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Antecedentes";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.antecendentes_Click);
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F);
-            this.button4.Location = new System.Drawing.Point(623, 322);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(165, 53);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Contacto de emergencia ";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.contactosEmergencia_Click);
             // 
             // textBox1
             // 
@@ -222,23 +180,83 @@ namespace ControlCitas
             this.regresar.UseVisualStyleBackColor = true;
             this.regresar.Click += new System.EventHandler(this.regresar_Click);
             // 
-            // editar
+            // btnEditar
             // 
-            this.editar.Location = new System.Drawing.Point(585, 219);
-            this.editar.Name = "editar";
-            this.editar.Size = new System.Drawing.Size(129, 29);
-            this.editar.TabIndex = 21;
-            this.editar.Text = "Editar";
-            this.editar.UseVisualStyleBackColor = true;
-            this.editar.Click += new System.EventHandler(this.editar_Click);
+            this.btnEditar.Location = new System.Drawing.Point(585, 219);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(129, 29);
+            this.btnEditar.TabIndex = 21;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.editar_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.btnContactoEmergencia);
+            this.flowLayoutPanel1.Controls.Add(this.btnAntecedentes);
+            this.flowLayoutPanel1.Controls.Add(this.btnHistorialConsultas);
+            this.flowLayoutPanel1.Controls.Add(this.btnNuevaConsulta);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(48, 320);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(684, 83);
+            this.flowLayoutPanel1.TabIndex = 22;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // btnContactoEmergencia
+            // 
+            this.btnContactoEmergencia.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnContactoEmergencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F);
+            this.btnContactoEmergencia.Location = new System.Drawing.Point(3, 3);
+            this.btnContactoEmergencia.Name = "btnContactoEmergencia";
+            this.btnContactoEmergencia.Size = new System.Drawing.Size(165, 77);
+            this.btnContactoEmergencia.TabIndex = 7;
+            this.btnContactoEmergencia.Text = "Contacto de emergencia ";
+            this.btnContactoEmergencia.UseVisualStyleBackColor = true;
+            this.btnContactoEmergencia.Click += new System.EventHandler(this.btnContactoEmergencia_Click);
+            // 
+            // btnAntecedentes
+            // 
+            this.btnAntecedentes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F);
+            this.btnAntecedentes.Location = new System.Drawing.Point(174, 3);
+            this.btnAntecedentes.Name = "btnAntecedentes";
+            this.btnAntecedentes.Size = new System.Drawing.Size(165, 77);
+            this.btnAntecedentes.TabIndex = 6;
+            this.btnAntecedentes.Text = "Antecedentes";
+            this.btnAntecedentes.UseVisualStyleBackColor = true;
+            this.btnAntecedentes.Click += new System.EventHandler(this.btnAntecedentes_Click);
+            // 
+            // btnHistorialConsultas
+            // 
+            this.btnHistorialConsultas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHistorialConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F);
+            this.btnHistorialConsultas.Location = new System.Drawing.Point(345, 3);
+            this.btnHistorialConsultas.Name = "btnHistorialConsultas";
+            this.btnHistorialConsultas.Size = new System.Drawing.Size(165, 77);
+            this.btnHistorialConsultas.TabIndex = 5;
+            this.btnHistorialConsultas.Text = "Historial de consultas";
+            this.btnHistorialConsultas.UseVisualStyleBackColor = true;
+            this.btnHistorialConsultas.Click += new System.EventHandler(this.btnHistorialConsultas_Click);
+            // 
+            // btnNuevaConsulta
+            // 
+            this.btnNuevaConsulta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNuevaConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F);
+            this.btnNuevaConsulta.Location = new System.Drawing.Point(516, 3);
+            this.btnNuevaConsulta.Name = "btnNuevaConsulta";
+            this.btnNuevaConsulta.Size = new System.Drawing.Size(165, 77);
+            this.btnNuevaConsulta.TabIndex = 4;
+            this.btnNuevaConsulta.Text = "Nueva consulta";
+            this.btnNuevaConsulta.UseVisualStyleBackColor = true;
             // 
             // Expediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.editar);
+            this.ClientSize = new System.Drawing.Size(784, 450);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.regresar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label7);
@@ -253,24 +271,18 @@ namespace ControlCitas
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.nuevaConsulta);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Expediente";
             this.Text = "Expediente";
+            this.Load += new System.EventHandler(this.Expediente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button nuevaConsulta;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
@@ -285,7 +297,12 @@ namespace ControlCitas
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button regresar;
-        private System.Windows.Forms.Button editar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnContactoEmergencia;
+        private System.Windows.Forms.Button btnAntecedentes;
+        private System.Windows.Forms.Button btnHistorialConsultas;
+        private System.Windows.Forms.Button btnNuevaConsulta;
     }
 }
 

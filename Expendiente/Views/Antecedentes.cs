@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Expendiente.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,11 +18,6 @@ namespace ControlCitas
             InitializeComponent();
         }
 
-        private void agregar_Click(object sender, EventArgs e)
-        {
-            ControladorNavegacion.MostrarFormulario(new AgregarAntecedentes());
-        }
-
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
           
@@ -32,9 +28,22 @@ namespace ControlCitas
 
         }
 
-        private void regresar_Click(object sender, EventArgs e)
+        private void btnRegresar_Click(object sender, EventArgs e)
         {
             ControladorNavegacion.MostrarFormulario(new Expediente());
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            ControladorNavegacion.MostrarFormulario(new AgregarAntecedentes());
+        }
+
+        private void Antecedentes_Load(object sender, EventArgs e)
+        {
+            if (Session.GetCurrentUser().IsPatient())
+            {
+                btnAgregar.Hide();
+            }
         }
     }
 }

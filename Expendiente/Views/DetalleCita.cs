@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Expendiente.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +41,24 @@ namespace ControlCitas
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             ControladorNavegacion.MostrarFormulario(new ListaConsultas());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ControladorNavegacion.MostrarFormulario(new ListaConsultas());
+        }
+
+        private void DetalleCita_Load(object sender, EventArgs e)
+        {
+            dtPickerFechaConsulta.Enabled = false;
+            if (Session.GetCurrentUser().IsPatient())
+            {
+                txtBoxPaciente.Enabled = false;
+                txtBoxPeso.Enabled = false;
+                txtBoxTemp.Enabled = false;
+                txtBoxDiagnostico.Enabled = false;
+                txtBoxReceta.Enabled = false;
+            }
         }
     }
 }

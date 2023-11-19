@@ -34,17 +34,17 @@ namespace ControlCitas
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(6, 1);
+            this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 448);
+            this.panel1.Size = new System.Drawing.Size(784, 503);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Index
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(784, 501);
             this.Controls.Add(this.panel1);
             this.Name = "Index";
             this.Text = "Control de citas";

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Contactos_De_Emergencia;
+using Expendiente.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -60,7 +62,13 @@ namespace ControlCitas
 
         private void regresar_Click(object sender, EventArgs e)
         {
-            ControladorNavegacion.MostrarFormulario(new AgendarCita());
+            if (Session.GetCurrentUser().IsPatient())
+            {
+                ControladorNavegacion.MostrarFormulario(new AgendarCita());
+                return;
+            }
+
+            ControladorNavegacion.MostrarFormulario(new ListaDePacientes());
         }
 
         private void editar_Click(object sender, EventArgs e)
@@ -73,6 +81,35 @@ namespace ControlCitas
         }
 
         private void contactosEmergencia_Click(object sender, EventArgs e)
+        {
+            ControladorNavegacion.MostrarFormulario(new ContactosDeEmergencia());
+        }
+
+        private void Expediente_Load(object sender, EventArgs e)
+        {
+            if(Session.GetCurrentUser().IsPatient())
+            {
+                btnNuevaConsulta.Hide();
+                btnEditar.Hide();
+            }
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAntecedentes_Click(object sender, EventArgs e)
+        {
+            ControladorNavegacion.MostrarFormulario(new Antecedentes());
+        }
+
+        private void btnHistorialConsultas_Click(object sender, EventArgs e)
+        {
+            ControladorNavegacion.MostrarFormulario(new ListaConsultas());
+        }
+
+        private void btnContactoEmergencia_Click(object sender, EventArgs e)
         {
             ControladorNavegacion.MostrarFormulario(new ContactosDeEmergencia());
         }

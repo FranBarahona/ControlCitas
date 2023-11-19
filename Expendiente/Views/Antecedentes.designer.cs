@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
@@ -42,23 +41,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.regresar = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(64, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 53);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "AGREGAR";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.agregar_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -229,30 +215,37 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Nombre de paciente";
             // 
-            // regresar
+            // btnRegresar
             // 
-            this.regresar.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.regresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regresar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.regresar.Location = new System.Drawing.Point(633, 385);
-            this.regresar.Name = "regresar";
-            this.regresar.Size = new System.Drawing.Size(102, 41);
-            this.regresar.TabIndex = 2;
-            this.regresar.Text = "Regresar";
-            this.regresar.UseVisualStyleBackColor = false;
-            this.regresar.Click += new System.EventHandler(this.regresar_Click);
+            this.btnRegresar.Location = new System.Drawing.Point(64, 24);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegresar.TabIndex = 3;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(656, 120);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 4;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // Antecedentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.regresar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.button1);
             this.Name = "Antecedentes";
             this.Text = "Antecedentes";
+            this.Load += new System.EventHandler(this.Antecedentes_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -260,10 +253,7 @@
         }
 
         #endregion
-
-        public System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        public System.Windows.Forms.Button regresar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -276,5 +266,7 @@
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }

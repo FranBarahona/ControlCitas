@@ -117,10 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="txtBoxDiagnostico.Text" xml:space="preserve">
-    <value>Posible bradicardia sinusal.
-El paciente presenta mareos y leve dolor en el torax.
-Irregularidades leves en electrocardiograma.
-El paciente presenta leve aumento en la presion arterial 135/85mm y pequeña irregularidad en la saturacion de oxigeno en sangre, se le programara examenes monitor Holder, ecocardiograma y nuevo electrocardiograma en proxima cita.</value>
-  </data>
 </root>
