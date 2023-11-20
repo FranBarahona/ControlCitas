@@ -1,5 +1,6 @@
 ﻿using Contactos_De_Emergencia;
 using Expendiente.Repositories;
+using PruebaForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,7 +55,12 @@ namespace ControlCitas
                 btnEditarConsulta.Hide();
                 cmbBoxSatuses.Hide();
                 lblEstado.Hide();
-                pnlNonPatientOptions.Hide();
+                nurseOptions.Hide();
+            }
+
+            if (Session.GetCurrentUser().IsDoctor())
+            {
+                nurseOptions.Hide();
             }
 
             if (Session.GetCurrentUser().IsNurse())
@@ -75,7 +81,15 @@ namespace ControlCitas
 
         private void regresar_Click(object sender, EventArgs e)
         {
-            ControladorNavegacion.MostrarFormulario(new Expediente());
+            if (Session.GetCurrentUser().IsPatient())
+            {
+                ControladorNavegacion.MostrarFormulario(new Expediente());
+            }
+
+            if (Session.GetCurrentUser().IsDoctor())
+            {
+                ControladorNavegacion.MostrarFormulario(new InicioDoc());
+            }
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -105,7 +119,20 @@ namespace ControlCitas
 
         private void btnVerConsulta_Click(object sender, EventArgs e)
         {
-            ControladorNavegacion.MostrarFormulario(new DetalleCita());
+            if (Session.GetCurrentUser().IsNurse())
+            {
+                ControladorNavegacion.MostrarFormulario(new DetalleCita());
+            }
+
+            if (Session.GetCurrentUser().IsDoctor())
+            {
+                ControladorNavegacion.MostrarFormulario(new Expediente());
+            }
+        }
+
+        private void pnlNonPatientOptions_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

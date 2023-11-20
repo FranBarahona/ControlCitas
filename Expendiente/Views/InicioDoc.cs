@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Contactos_De_Emergencia;
+using ControlCitas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -105,6 +107,16 @@ namespace PruebaForm
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCalendarioCitas_Click(object sender, EventArgs e)
+        {
+            ControladorNavegacion.MostrarFormulario(new ListaConsultas());
+        }
+
+        private void btnListadoPacientes_Click(object sender, EventArgs e)
+        {
+            ControladorNavegacion.MostrarFormulario(new ListaDePacientes());
         }
     }
 }

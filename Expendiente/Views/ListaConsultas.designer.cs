@@ -31,7 +31,7 @@
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlNonPatientOptions = new System.Windows.Forms.FlowLayoutPanel();
+            this.nurseOptions = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPacientes = new System.Windows.Forms.Button();
             this.btnCrearCita = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,7 +48,7 @@
             this.summary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.flowLayoutPanel1.SuspendLayout();
-            this.pnlNonPatientOptions.SuspendLayout();
+            this.nurseOptions.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.pnlNonPatientOptions);
+            this.flowLayoutPanel1.Controls.Add(this.nurseOptions);
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(32, 40);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -73,12 +73,13 @@
             // 
             // pnlNonPatientOptions
             // 
-            this.pnlNonPatientOptions.Controls.Add(this.btnPacientes);
-            this.pnlNonPatientOptions.Controls.Add(this.btnCrearCita);
-            this.pnlNonPatientOptions.Location = new System.Drawing.Point(3, 3);
-            this.pnlNonPatientOptions.Name = "pnlNonPatientOptions";
-            this.pnlNonPatientOptions.Size = new System.Drawing.Size(712, 48);
-            this.pnlNonPatientOptions.TabIndex = 16;
+            this.nurseOptions.Controls.Add(this.btnPacientes);
+            this.nurseOptions.Controls.Add(this.btnCrearCita);
+            this.nurseOptions.Location = new System.Drawing.Point(3, 3);
+            this.nurseOptions.Name = "pnlNonPatientOptions";
+            this.nurseOptions.Size = new System.Drawing.Size(712, 48);
+            this.nurseOptions.TabIndex = 16;
+            this.nurseOptions.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNonPatientOptions_Paint);
             // 
             // btnPacientes
             // 
@@ -232,7 +233,7 @@
             this.Text = "Consultas";
             this.Load += new System.EventHandler(this.ListaConsultas_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.pnlNonPatientOptions.ResumeLayout(false);
+            this.nurseOptions.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -243,7 +244,7 @@
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel pnlNonPatientOptions;
+        private System.Windows.Forms.FlowLayoutPanel nurseOptions;
         private System.Windows.Forms.Button btnPacientes;
         private System.Windows.Forms.Button btnCrearCita;
         private System.Windows.Forms.Panel panel1;

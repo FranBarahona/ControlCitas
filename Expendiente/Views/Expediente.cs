@@ -68,6 +68,12 @@ namespace ControlCitas
                 return;
             }
 
+            if (Session.GetCurrentUser().IsDoctor())
+            {
+                ControladorNavegacion.MostrarFormulario(new ListaConsultas());
+                return;
+            }
+
             ControladorNavegacion.MostrarFormulario(new ListaDePacientes());
         }
 

@@ -42,8 +42,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCalendarioCitas = new System.Windows.Forms.Button();
+            this.btnListadoPacientes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,27 +212,29 @@
             this.label13.Text = "Pedro";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
-            // button1
+            // btnCalendarioCitas
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(318, 126);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 162);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Calendario de citas";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCalendarioCitas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCalendarioCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalendarioCitas.Location = new System.Drawing.Point(318, 126);
+            this.btnCalendarioCitas.Name = "btnCalendarioCitas";
+            this.btnCalendarioCitas.Size = new System.Drawing.Size(172, 162);
+            this.btnCalendarioCitas.TabIndex = 19;
+            this.btnCalendarioCitas.Text = "Calendario de citas";
+            this.btnCalendarioCitas.UseVisualStyleBackColor = true;
+            this.btnCalendarioCitas.Click += new System.EventHandler(this.btnCalendarioCitas_Click);
             // 
-            // button2
+            // btnListadoPacientes
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(568, 126);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 162);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Listado de pacienctes";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnListadoPacientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnListadoPacientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListadoPacientes.Location = new System.Drawing.Point(568, 126);
+            this.btnListadoPacientes.Name = "btnListadoPacientes";
+            this.btnListadoPacientes.Size = new System.Drawing.Size(172, 162);
+            this.btnListadoPacientes.TabIndex = 20;
+            this.btnListadoPacientes.Text = "Listado de pacienctes";
+            this.btnListadoPacientes.UseVisualStyleBackColor = true;
+            this.btnListadoPacientes.Click += new System.EventHandler(this.btnListadoPacientes_Click);
             // 
             // InicioDoc
             // 
@@ -240,8 +242,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnListadoPacientes);
+            this.Controls.Add(this.btnCalendarioCitas);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label12);
@@ -281,8 +283,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCalendarioCitas;
+        private System.Windows.Forms.Button btnListadoPacientes;
     }
 }
 
