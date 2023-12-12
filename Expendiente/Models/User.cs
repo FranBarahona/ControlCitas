@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Expendiente.conn;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,21 +9,21 @@ namespace Expendiente.Models
 {
     internal class User
     {
-        public const string DOCTOR  = "doctor";
-        public const string NURSE   = "nurse";
-        public const string PATIENT = "patient";
+        public const string DOCTOR  = "Doctor";
+        public const string NURSE   = "Nurse";
+        public const string PATIENT = "Patient";
 
         public string Name { get; }
         public string Email { get; }
         private string Role;
         private string Password;
 
-        public User(string Name, string Email, string Password, string Role = PATIENT)
+        public User(usuario user)
         { 
-            this.Name     = Name;
-            this.Email    = Email;
-            this.Password = Password;
-            this.Role     = Role;
+            this.Name     = user.nombre;
+            this.Email    = user.correo;
+            this.Password = user.contrasena;
+            this.Role     = user.role.nombre;
         }
 
         public bool IsValidPassword(string Password) {
