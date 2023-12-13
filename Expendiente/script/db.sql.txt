@@ -1,117 +1,83 @@
--- master.dbo.roles definition
+-- TABLA ROL
 
--- Drop table
+CREATE TABLE roles(
+id INT PRIMARY KEY not null,
+nombre VARCHAR(255)
+);
 
--- DROP TABLE master.dbo.roles;
+-- TABLA USUARIOS
 
-CREATE TABLE master.dbo.roles (
-	id int NOT NULL,
-	nombre varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	CONSTRAINT PK__roles__3213E83F733D0580 PRIMARY KEY (id)
+CREATE TABLE usuarios(
+id INT PRIMARY KEY not null,
+id_rol int,
+nombre VARCHAR(255),
+correo VARCHAR(100),
+contrasena VARCHAR(255),
+is_active VARCHAR(10),
+FOREIGN KEY (id_rol) references roles(id)
 );
 
 
--- master.dbo.estados_citas definition
 
--- Drop table
+-- TABLA CONTACTOS EMERGENCIA
 
--- DROP TABLE master.dbo.estados_citas;
+CREATE TABLE contactos_emergencia(
+id INT PRIMARY KEY not null,
+id_usuario Int,
+nombres VARCHAR(50),
+apellidos VARCHAR(50),
+parentesco VARCHAR(50),
+direccion VARCHAR(255),
+telefono VARCHAR(15),
+FOREIGN KEY (id_usuario) references usuarios(id)
+);
 
-CREATE TABLE master.dbo.estados_citas (
-	id int NOT NULL,
-	nombre varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	CONSTRAINT PK__estados___3213E83FBB963D75 PRIMARY KEY (id)
+-- TABLA ESTADOS_CITA
+
+CREATE TABLE Estados_citas(
+id INT PRIMARY KEY not null,
+nombre VARCHAR(255)
+);
+
+-- TABLA CITAS
+
+
+CREATE TABLE citas(
+id INT PRIMARY KEY not null,
+id_estado_cita int,
+fecha datetime, 
+motivo VARCHAR(100),
+is_deleted VARCHAR(10)
+FOREIGN KEY (id_estado_cita) references estados_citas(id),
+);
+
+-- TABLA Usuario_Cita
+
+CREATE TABLE usuario_cita(
+id INT PRIMARY KEY not null,
+id_usuario int,
+id_cita int,
+perfil VARCHAR(10),
+FOREIGN KEY (id_usuario) references usuarios(id),
+FOREIGN KEY (id_cita) references citas(id)
 );
 
 
--- master.dbo.usuarios definition
 
--- Drop table
 
--- DROP TABLE master.dbo.usuarios;
 
-CREATE TABLE master.dbo.usuarios (
-	id int NOT NULL,
-	id_rol int NULL,
-	nombre varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	correo varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	contrasena varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	is_active varchar(15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	CONSTRAINT PK__usuarios__3213E83F052AC52E PRIMARY KEY (id),
-	CONSTRAINT FK__usuarios__is_act__68687968 FOREIGN KEY (id_rol) REFERENCES master.dbo.roles(id)
+
+-- TABLA DETALLE CITA
+
+CREATE TABLE detalle_cita(
+id INT PRIMARY KEY not null,
+id_cita int,
+peso Varchar(100),
+temperatura VARCHAR(255),
+diagnostico VARCHAR(400),
+recetas VARCHAR(300),
+FOREIGN KEY (id_cita) references citas(id)
 );
-
-
--- master.dbo.citas definition
-
--- Drop table
-
--- DROP TABLE master.dbo.citas;
-
-CREATE TABLE master.dbo.citas (
-	id int NOT NULL,
-	id_estado_cita int NULL,
-	fecha datetime NULL,
-	motivo varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	is_Deleted varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	CONSTRAINT PK__citas__3213E83F0D42EC35 PRIMARY KEY (id),
-	CONSTRAINT FK__citas__is_Delete__70099B30 FOREIGN KEY (id_estado_cita) REFERENCES master.dbo.estados_citas(id)
-);
-
-
--- master.dbo.usuario_cita definition
-
--- Drop table
-
--- DROP TABLE master.dbo.usuario_cita;
-
-CREATE TABLE master.dbo.usuario_cita (
-	id int NOT NULL,
-	id_usuario int NULL,
-	id_cita int NULL,
-	perfil varchar(10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	CONSTRAINT PK__usuario___3213E83F9D37160D PRIMARY KEY (id),
-	CONSTRAINT FK__usuario_c__id_ci__73DA2C14 FOREIGN KEY (id_cita) REFERENCES master.dbo.citas(id),
-	CONSTRAINT FK__usuario_c__id_us__72E607DB FOREIGN KEY (id_usuario) REFERENCES master.dbo.usuarios(id)
-);
-
-
--- master.dbo.detalle_cita definition
-
--- Drop table
-
--- DROP TABLE master.dbo.detalle_cita;
-
-CREATE TABLE master.dbo.detalle_cita (
-	id int NOT NULL,
-	id_cita int NULL,
-	peso varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	temperatura varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	diagnostico varchar(400) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	recetas varchar(300) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	CONSTRAINT PK__detalle___3213E83F17967F6D PRIMARY KEY (id),
-	CONSTRAINT FK__detalle_c__id_ci__76B698BF FOREIGN KEY (id_cita) REFERENCES master.dbo.citas(id)
-);
-
-
--- master.dbo.contactos_emergencia definition
-
--- Drop table
-
--- DROP TABLE master.dbo.contactos_emergencia;
-
-CREATE TABLE master.dbo.contactos_emergencia (
-	id int NOT NULL,
-	id_usuario int NULL,
-	nombres varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	apellidos varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	parentesco varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	direccion varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	telefono varchar(15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	CONSTRAINT PK__contacto__3213E83F088D42F7 PRIMARY KEY (id),
-	CONSTRAINT FK__contactos__id_us__6B44E613 FOREIGN KEY (id_usuario) REFERENCES master.dbo.usuarios(id)
-);
-
 
 
 INSERT INTO master.dbo.roles (id, nombre) VALUES(1, N'Doctor');
