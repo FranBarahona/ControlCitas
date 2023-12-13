@@ -12,18 +12,18 @@ namespace Expendiente.conn
     using System;
     using System.Collections.Generic;
     
-    public partial class estados_citas
+    public partial class Estados_citas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public estados_citas()
+        public Estados_citas()
         {
-            this.citas = new HashSet<cita>();
+            this.citas = new HashSet<citas>();
         }
     
         public int id { get; set; }
         public string nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<cita> citas { get; set; }
+        public virtual ICollection<citas> citas { get; set; }
     }
 }

@@ -4,25 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ae302b789fc742b28d4075ac3b597aca" Name="Diagram1">
-        <EntityTypeShape EntityType="masterModel.cita" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.contactos_emergencia" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.detalle_cita" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.estados_citas" Width="1.5" PointX="3.75" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.role" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.usuario_cita" Width="1.5" PointX="8.375" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.usuario" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.MSreplication_options" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.spt_fallback_db" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.spt_fallback_dev" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.spt_fallback_usg" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.spt_monitor" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="masterModel.FK__citas__is_Delete__70099B30" ManuallyRouted="false" />
-        <AssociationConnector Association="masterModel.FK__detalle_c__id_ci__76B698BF" ManuallyRouted="false" />
-        <AssociationConnector Association="masterModel.FK__usuario_c__id_ci__73DA2C14" ManuallyRouted="false" />
-        <AssociationConnector Association="masterModel.FK__contactos__id_us__6B44E613" ManuallyRouted="false" />
-        <AssociationConnector Association="masterModel.FK__usuarios__is_act__68687968" ManuallyRouted="false" />
-        <AssociationConnector Association="masterModel.FK__usuario_c__id_us__72E607DB" ManuallyRouted="false" />
+      <Diagram DiagramId="f3fe96a991b74273860a305dbeb56cae" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_EMERGENCIAModel.citas" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EMERGENCIAModel.contactos_emergencia" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EMERGENCIAModel.detalle_cita" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EMERGENCIAModel.Estados_citas" Width="1.5" PointX="3.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EMERGENCIAModel.roles" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EMERGENCIAModel.usuario_cita" Width="1.5" PointX="8.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EMERGENCIAModel.usuarios" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <AssociationConnector Association="DB_EMERGENCIAModel.FK__citas__is_delete__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_EMERGENCIAModel.FK__detalle_c__id_ci__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_EMERGENCIAModel.FK__usuario_c__id_ci__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_EMERGENCIAModel.FK__contactos__id_us__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_EMERGENCIAModel.FK__usuarios__id_rol__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_EMERGENCIAModel.FK__usuario_c__id_us__5629CD9C" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

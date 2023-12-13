@@ -14,13 +14,16 @@ namespace Expendiente.Repositories
     {
         private List<User> users = new List<User>();
 
-        public InMemoryUsersRepository() {
-            using ( masterEntities db = new masterEntities()) {
+        public InMemoryUsersRepository()
+        {
+            using (masterEntities db = new masterEntities())
+            {
 
-                 db.usuarios.ToList().ForEach((item)=>{
-                     users.Add(new User(item));
-                 });
-                }
+                db.usuarios.ToList().ForEach((item) =>
+                {
+                    users.Add(new User(item));
+                });
+            }
         }
 
         public User FindByEmail(string Email)

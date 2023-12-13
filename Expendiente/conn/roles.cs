@@ -12,15 +12,18 @@ namespace Expendiente.conn
     using System;
     using System.Collections.Generic;
     
-    public partial class spt_fallback_db
+    public partial class roles
     {
-        public string xserver_name { get; set; }
-        public System.DateTime xdttm_ins { get; set; }
-        public System.DateTime xdttm_last_ins_upd { get; set; }
-        public Nullable<short> xfallback_dbid { get; set; }
-        public string name { get; set; }
-        public short dbid { get; set; }
-        public short status { get; set; }
-        public short version { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public roles()
+        {
+            this.usuarios = new HashSet<usuarios>();
+        }
+    
+        public int id { get; set; }
+        public string nombre { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<usuarios> usuarios { get; set; }
     }
 }

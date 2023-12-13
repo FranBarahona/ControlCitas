@@ -70,7 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="conn\cita.cs">
+    <Compile Include="conn\citas.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="conn\contactos_emergencia.cs">
@@ -79,7 +79,7 @@
     <Compile Include="conn\detalle_cita.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="conn\estados_citas.cs">
+    <Compile Include="conn\Estados_citas.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="conn\Model1.Context.cs">
@@ -97,25 +97,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="conn\MSreplication_options.cs">
+    <Compile Include="conn\roles.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="conn\role.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="conn\spt_fallback_db.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="conn\spt_fallback_dev.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="conn\spt_fallback_usg.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="conn\spt_monitor.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="conn\usuario.cs">
+    <Compile Include="conn\usuarios.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="conn\usuario_cita.cs">
@@ -304,22 +289,22 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="script\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="conn\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="conn\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="script\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

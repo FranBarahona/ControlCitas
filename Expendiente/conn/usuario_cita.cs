@@ -19,7 +19,7 @@ namespace Expendiente.conn
         public Nullable<int> id_cita { get; set; }
         public string perfil { get; set; }
     
-        public virtual cita cita { get; set; }
-        public virtual usuario usuario { get; set; }
+        public virtual citas citas { get; set; }
+        public virtual usuarios usuarios { get; set; }
     }
 }

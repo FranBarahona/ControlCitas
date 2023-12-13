@@ -12,10 +12,10 @@ namespace Expendiente.conn
     using System;
     using System.Collections.Generic;
     
-    public partial class cita
+    public partial class citas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public cita()
+        public citas()
         {
             this.detalle_cita = new HashSet<detalle_cita>();
             this.usuario_cita = new HashSet<usuario_cita>();
@@ -25,9 +25,9 @@ namespace Expendiente.conn
         public Nullable<int> id_estado_cita { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
         public string motivo { get; set; }
-        public string is_Deleted { get; set; }
+        public string is_deleted { get; set; }
     
-        public virtual estados_citas estados_citas { get; set; }
+        public virtual Estados_citas Estados_citas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<detalle_cita> detalle_cita { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -25,17 +25,12 @@ namespace Expendiente.conn
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<cita> citas { get; set; }
+        public virtual DbSet<citas> citas { get; set; }
         public virtual DbSet<contactos_emergencia> contactos_emergencia { get; set; }
         public virtual DbSet<detalle_cita> detalle_cita { get; set; }
-        public virtual DbSet<estados_citas> estados_citas { get; set; }
-        public virtual DbSet<role> roles { get; set; }
+        public virtual DbSet<Estados_citas> Estados_citas { get; set; }
+        public virtual DbSet<roles> roles { get; set; }
         public virtual DbSet<usuario_cita> usuario_cita { get; set; }
-        public virtual DbSet<usuario> usuarios { get; set; }
-        public virtual DbSet<MSreplication_options> MSreplication_options { get; set; }
-        public virtual DbSet<spt_fallback_db> spt_fallback_db { get; set; }
-        public virtual DbSet<spt_fallback_dev> spt_fallback_dev { get; set; }
-        public virtual DbSet<spt_fallback_usg> spt_fallback_usg { get; set; }
-        public virtual DbSet<spt_monitor> spt_monitor { get; set; }
+        public virtual DbSet<usuarios> usuarios { get; set; }
     }
 }

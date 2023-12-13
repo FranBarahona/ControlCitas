@@ -12,18 +12,26 @@ namespace Expendiente.conn
     using System;
     using System.Collections.Generic;
     
-    public partial class role
+    public partial class usuarios
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public role()
+        public usuarios()
         {
-            this.usuarios = new HashSet<usuario>();
+            this.contactos_emergencia = new HashSet<contactos_emergencia>();
+            this.usuario_cita = new HashSet<usuario_cita>();
         }
     
         public int id { get; set; }
+        public Nullable<int> id_rol { get; set; }
         public string nombre { get; set; }
+        public string correo { get; set; }
+        public string contrasena { get; set; }
+        public string is_active { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<usuario> usuarios { get; set; }
+        public virtual ICollection<contactos_emergencia> contactos_emergencia { get; set; }
+        public virtual roles roles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<usuario_cita> usuario_cita { get; set; }
     }
 }

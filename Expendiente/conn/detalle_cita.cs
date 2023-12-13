@@ -21,6 +21,6 @@ namespace Expendiente.conn
         public string diagnostico { get; set; }
         public string recetas { get; set; }
     
-        public virtual cita cita { get; set; }
+        public virtual citas citas { get; set; }
     }
 }

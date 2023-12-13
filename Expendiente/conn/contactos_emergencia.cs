@@ -22,6 +22,6 @@ namespace Expendiente.conn
         public string direccion { get; set; }
         public string telefono { get; set; }
     
-        public virtual usuario usuario { get; set; }
+        public virtual usuarios usuarios { get; set; }
     }
 }

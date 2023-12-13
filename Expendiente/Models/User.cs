@@ -18,12 +18,12 @@ namespace Expendiente.Models
         private string Role;
         private string Password;
 
-        public User(usuario user)
+        public User(usuarios user)
         { 
             this.Name     = user.nombre;
             this.Email    = user.correo;
             this.Password = user.contrasena;
-            this.Role     = user.role.nombre;
+            this.Role     = user.roles.nombre;
         }
 
         public bool IsValidPassword(string Password) {
