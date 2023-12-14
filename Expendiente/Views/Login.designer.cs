@@ -79,6 +79,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(390, 535);
             this.panel2.TabIndex = 6;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lblSessionError
             // 
@@ -119,7 +120,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(64, 221);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 16);
+            this.label2.Size = new System.Drawing.Size(108, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "Ingrese Clave:";
             // 
@@ -137,7 +138,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(64, 157);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 16);
+            this.label1.Size = new System.Drawing.Size(122, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Ingrese Usuario:";
             // 

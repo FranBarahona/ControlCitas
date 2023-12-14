@@ -30,5 +30,30 @@ namespace Expendiente.Repositories
         {
             return users.Find(x => x.Email == Email);
         }
+
+        public User FindById(int id)
+        {
+            using (masterEntities db = new masterEntities())
+            {
+                return  new User(db.usuarios.Find(id));
+            }
+        }
+
+        public void Update(int id, string nombre, string correo)
+        {
+            using(masterEntities db = new masterEntities()){
+                var usuario = db.usuarios.Find(id);
+                db.usuarios.Attach(usuario);
+
+                usuario.correo = correo;
+                usuario.nombre = nombre;
+
+                db.Entry(usuario).Property(e => e.correo).IsModified = true;
+                db.Entry(usuario).Property(e => e.nombre).IsModified = true;
+
+                // Guarda los cambios en la base de datos.
+                db.SaveChanges();
+            }
+        }
     }
 }

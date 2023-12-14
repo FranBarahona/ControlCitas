@@ -1,4 +1,5 @@
 ﻿using Contactos_De_Emergencia;
+using Expendiente.Models;
 using Expendiente.Repositories;
 using System;
 using System.Collections.Generic;
@@ -14,20 +15,28 @@ namespace ControlCitas
 {
     public partial class Expediente : Form
     {
-        public Expediente()
+        private InMemoryUsersRepository UsersRepository = new InMemoryUsersRepository();
+        private User user;
+        private int idUser;
+        public Expediente(int idUser)
         {
+            this.user = UsersRepository.FindById(idUser);
+            this.idUser = idUser;
             InitializeComponent();
-            this.textBox1.Enabled = false;
-            this.textBox2.Enabled = false;
-            this.textBox3.Enabled = false;
-            this.textBox4.Enabled = false;
-            this.textBox5.Enabled = false;
+            initialize();
+
         }
 
+        private void initialize()
+        {
+            activeTextBoxs(false);
+
+            this.textBox1.Text = user.Name;
+            this.textBox2.Text = user.Email;
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-          
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -79,11 +88,9 @@ namespace ControlCitas
 
         private void editar_Click(object sender, EventArgs e)
         {
-            this.textBox1.Enabled = true;
-            this.textBox2.Enabled = true;
-            this.textBox3.Enabled = true;
-            this.textBox4.Enabled = true;
-            this.textBox5.Enabled = true;
+            activeTextBoxs(true);
+            Guardar.Show();
+
         }
 
         private void contactosEmergencia_Click(object sender, EventArgs e)
@@ -93,10 +100,11 @@ namespace ControlCitas
 
         private void Expediente_Load(object sender, EventArgs e)
         {
+            Guardar.Hide();
             if(Session.GetCurrentUser().IsPatient())
             {
                 btnNuevaConsulta.Hide();
-                btnEditar.Hide();
+                //btnEditar.Hide();
             }
         }
 
@@ -118,6 +126,37 @@ namespace ControlCitas
         private void btnContactoEmergencia_Click(object sender, EventArgs e)
         {
             ControladorNavegacion.MostrarFormulario(new ContactosDeEmergencia());
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Guardar_Click(object sender, EventArgs e)
+        {
+            var nombre = this.textBox1.Text;
+            var correo = this.textBox2.Text;
+            UsersRepository.Update(this.idUser,nombre,correo);
+            RecargarInformacion();
+            Guardar.Hide();
+            activeTextBoxs(false);
+        }
+
+        private void RecargarInformacion()
+        {
+            // Puedes hacer una nueva consulta para obtener la información actualizada desde la base de datos
+            var usuarioActualizado = UsersRepository.FindById(this.idUser);
+
+            // Actualiza los campos en la interfaz de usuario con la información recargada
+            this.textBox1.Text = usuarioActualizado.Name;
+            this.textBox2.Text = usuarioActualizado.Email;
+        }
+
+        private void activeTextBoxs(bool isActive)
+        {
+            this.textBox1.Enabled = isActive;
+            this.textBox2.Enabled = isActive;
         }
     }
 }
